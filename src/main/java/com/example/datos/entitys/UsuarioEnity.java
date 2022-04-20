@@ -9,7 +9,7 @@ public class UsuarioEnity {
     public UsuarioEnity() {
     }
 
-    public UsuarioEnity(Integer id, Integer distance, Integer leftButton, Integer rightButton, Integer doubleClicks, Integer keystrokes, Integer middelButton, Integer mousewheelScrolls, Integer alias, String fecha) {
+    public UsuarioEnity(Integer id, Integer distance, Integer leftButton, Integer rightButton, Integer doubleClicks, Integer keystrokes, Integer middelButton, Integer mousewheelScrolls, String alias, String fecha) {
         this.id = id;
         this.distance = distance;
         this.leftButton = leftButton;
@@ -49,7 +49,7 @@ public class UsuarioEnity {
     private Integer mousewheelScrolls;
 
     @Column(name = "alias")
-    private Integer alias;
+    private String alias;
 
     @Column(name = "fecha")
     private String fecha;
@@ -118,11 +118,11 @@ public class UsuarioEnity {
         this.mousewheelScrolls = mousewheelScrolls;
     }
 
-    public Integer getAlias() {
+    public String getAlias() {
         return alias;
     }
 
-    public void setAlias(Integer alias) {
+    public void setAlias(String alias) {
         this.alias = alias;
     }
 
