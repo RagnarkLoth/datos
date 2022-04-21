@@ -41,37 +41,23 @@ public class UsuarioServices {
 
                 }
 
-                Collections.reverse(usuariosAlias);
+                for(int j = 0; j<usuariosAlias.size()-1; j++) {
 
-                for(int j = 1; j<usuariosAlias.size(); j++) {
+                    int indexAntiguo = j + 1;
 
-                    int distancia = usuariosAlias.get(j).getDistance()-usuariosAlias.get(j).getDistance();
+                    int distancia = usuariosAlias.get(j).getDistance()-usuariosAlias.get(indexAntiguo).getDistance();
 
-                    log.info("paso");
+                    int botonIzquierdo = usuariosAlias.get(j).getLeftButton()-usuariosAlias.get(indexAntiguo).getLeftButton();
 
-                    int botonIzquierdo = usuariosAlias.get(j-1).getLeftButton()-usuariosAlias.get(j).getLeftButton();
+                    int botonDerecho = usuariosAlias.get(j).getRightButton() - usuariosAlias.get(indexAntiguo).getRightButton();
 
-                    log.info("paso");
+                    int botonMedio = usuariosAlias.get(j).getMiddelButton()-usuariosAlias.get(indexAntiguo).getMiddelButton();
 
-                    int botonDerecho = usuariosAlias.get(j-1).getRightButton()-usuariosAlias.get(j).getRightButton();
+                    int ruedaMouse = usuariosAlias.get(j).getMousewheelScrolls()-usuariosAlias.get(indexAntiguo).getMousewheelScrolls();
 
-                    log.info("paso");
+                    int dobleClick = usuariosAlias.get(j).getDoubleClicks()-usuariosAlias.get(indexAntiguo).getDoubleClicks();
 
-                    int botonMedio = usuariosAlias.get(j-1).getMiddelButton()-usuariosAlias.get(j).getMiddelButton();
-
-                    log.info("paso");
-
-                    int ruedaMouse = usuariosAlias.get(j-1).getMousewheelScrolls()-usuariosAlias.get(j).getMousewheelScrolls();
-
-                    log.info("paso");
-
-                    int dobleClick = usuariosAlias.get(j-1).getDoubleClicks()-usuariosAlias.get(j).getDoubleClicks();
-
-                    log.info("paso");
-
-                    int teclas = usuariosAlias.get(j-1).getKeystrokes()-usuariosAlias.get(j).getKeystrokes();
-
-                    log.info("paso");
+                    int teclas = usuariosAlias.get(j).getKeystrokes()-usuariosAlias.get(indexAntiguo).getKeystrokes();
 
                     UsuarioEnity usuarioNuevo = usuarioRepository.findById(usuariosAlias.get(j).getId().intValue());
 
@@ -112,7 +98,7 @@ public class UsuarioServices {
 
     public List<UsuarioEnity> traerDatos(){
 
-        return usuarioRepository.findByAlias("AAAA");
+        return usuarioRepository.findByAlias("DDDD");
 
     }
 
